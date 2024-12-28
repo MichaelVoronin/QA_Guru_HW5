@@ -22,7 +22,7 @@ def test_form():
     browser.element('.react-datepicker__year-select').element('[value="1995"]').click()
     browser.element('.react-datepicker__day.react-datepicker__day--012').click()
 
-
+    browser.element('#subjectsInput').type('Ручка')
     browser.element('[for=hobbies-checkbox-1]').click()
 
 
@@ -33,7 +33,12 @@ def test_form():
     browser.element("#state").click().element(by.text("NCR")).click()
     browser.element("#city").click().element(by.text("Delhi")).click()
 
+
+    browser.element('#submit').click()
+
+
     browser.element('[class="modal-header"').should(have.text('Thanks for submitting the form'))
+
 
     browser.element('[class="table-responsive"]').should(have.text('Mike Voronin'))
     browser.element('[class="table-responsive"]').should(have.text('test@mail.ru'))
