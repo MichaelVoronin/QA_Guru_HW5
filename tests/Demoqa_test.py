@@ -20,7 +20,7 @@ def test_form():
     browser.element('.react-datepicker__year-select').element('[value="1995"]').click()
     browser.element('.react-datepicker__day.react-datepicker__day--012').click()
 
-    browser.element('#subjectsInput').type('ec').press_enter()
+    browser.element('#subjectsInput').type('ec').press()
     browser.element('[for=hobbies-checkbox-1]').click()
 
     browser.element('#uploadPicture').set_value(os.path.abspath('../tests/patriots.png'))
