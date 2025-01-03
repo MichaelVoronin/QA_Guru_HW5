@@ -20,7 +20,7 @@ def test_form():
     browser.element('.react-datepicker__year-select').element('[value="1995"]').click()
     browser.element('.react-datepicker__day.react-datepicker__day--012').click()
 
-    browser.element('#subjectsInput').type('ec').press()
+    browser.element('#subjectsInput').type('economics').press_enter()
     browser.element('[for=hobbies-checkbox-1]').click()
 
     browser.element('#uploadPicture').set_value(os.path.abspath('../tests/patriots.png'))
@@ -38,6 +38,7 @@ def test_form():
     browser.element('[class="table-responsive"]').should(have.text('Male'))
     browser.element('[class="table-responsive"]').should(have.text('1234567891'))
     browser.element('[class="table-responsive"]').should(have.text('12 September,1995'))
+    browser.element('[class="table-responsive"]').should(have.text('Economics'))
     browser.element('[class="table-responsive"]').should(have.text('Sports'))
     browser.element('[class="table-responsive"]').should(have.text('patriots.png'))
     browser.element('[class="table-responsive"]').should(have.text('Ленина 1'))
